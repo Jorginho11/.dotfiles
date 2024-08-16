@@ -41,7 +41,11 @@ return require('packer').startup(function(use)
             -- LSP Support
             {'neovim/nvim-lspconfig'},
             {'williamboman/mason.nvim'},
+            {'jose-elias-alvarez/null-ls.nvim'},
+            {'jayp0521/mason-null-ls.nvim'},
+            {'jay-babu/mason-nvim-dap.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
+            {'WhoIsSethDaniel/mason-tool-installer.nvim'},
 
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},
@@ -71,6 +75,7 @@ return require('packer').startup(function(use)
   use"nvim-neotest/neotest-python"
   use"mfussenegger/nvim-dap"
   use"mfussenegger/nvim-dap-python"
+  use"leoluz/nvim-dap-go"
   use"rcarriga/nvim-dap-ui"
   use'theHamsta/nvim-dap-virtual-text'
   use"folke/lazydev.nvim"

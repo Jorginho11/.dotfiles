@@ -4,18 +4,36 @@ require('mason-tool-installer').setup {
   -- start
   ensure_installed = {
 	  --bash
-	  'bash-language-server',
+	  'bashls',
 	  -- python
 	  'pyright',
 	  'pylint',
 	  'black',
 	  'debugpy',
+      -- ansible
+      'ansiblels',
+      'ansible-lint',
+      -- yaml
+      'yamllint',
+      --hcl
+      'tflint',
+      'terraform',
+      'packer',
+      'terraform_lsp',
+      --json
+      'jsonls',
+      'prettier',
+      'jsonlint',
 	  -- go
+      'gopls',
+      'gofmt',
+      'golangci-lint',
 	  'delve',
 	  -- lua
-	  'lua-language-server'
+	  'lua-language-server',
 	  -- ruby
-	  'solargraph'
+	  'solargraph',
+      'rubocop'
   },
   auto_update=false,
 }
