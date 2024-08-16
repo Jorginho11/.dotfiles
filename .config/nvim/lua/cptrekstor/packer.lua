@@ -1,4 +1,3 @@
-
 -- Only required if you have packer configured as `opt`
 local ensure_packer = function()
   local fn = vim.fn

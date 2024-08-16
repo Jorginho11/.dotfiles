@@ -1,4 +1,5 @@
 require('cptrekstor.packer')
 require('cptrekstor.remap')
 require('cptrekstor.set')
+require('cptrekstor.terraform')
 print('have a nice working day!')

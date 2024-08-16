@@ -16,17 +16,17 @@ require('mason-tool-installer').setup {
       -- yaml
       'yamllint',
       --hcl
-      'tflint',
-      'terraform',
-      'packer',
-      'terraform_lsp',
+      --'tflint',
+      --'terraform',
+      --'packer',
+      --'terraform_lsp',
       --json
       'jsonls',
       'prettier',
       'jsonlint',
 	  -- go
       'gopls',
-      'gofmt',
+      --'gofmt',
       'golangci-lint',
 	  'delve',
 	  -- lua

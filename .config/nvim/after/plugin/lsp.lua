@@ -2,6 +2,16 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
+-- Configure terraform-lsp
+local lspconfig = require('lspconfig')
+lspconfig.terraformls.setup({
+  cmd = { "terraform-ls", "serve" },
+  filetypes = { "terraform" },
+  root_dir = lspconfig.util.root_pattern("*.tf"),
+  settings = {},
+})
+require'lspconfig'.tflint.setup{}
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({

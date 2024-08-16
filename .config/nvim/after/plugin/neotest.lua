@@ -1,4 +1,8 @@
 require("neotest").setup({
+keymap("n", "<leader>ti", ":!terraform init<CR>", opts)
+keymap("n", "<leader>tv", ":!terraform validate<CR>", opts)
+keymap("n", "<leader>tp", ":!terraform plan<CR>", opts)
+keymap("n", "<leader>taa", ":!terraform apply -auto-approve<CR>", opts)
   adapters = {
     require("neotest-python")({
         -- Extra arguments for nvim-dap configuration
