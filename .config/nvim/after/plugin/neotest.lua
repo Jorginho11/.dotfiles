@@ -1,13 +1,10 @@
 require("neotest").setup({
-keymap("n", "<leader>ti", ":!terraform init<CR>", opts)
-keymap("n", "<leader>tv", ":!terraform validate<CR>", opts)
-keymap("n", "<leader>tp", ":!terraform plan<CR>", opts)
-keymap("n", "<leader>taa", ":!terraform apply -auto-approve<CR>", opts)
-  adapters = {
+
+adapters = {
     require("neotest-python")({
         -- Extra arguments for nvim-dap configuration
         -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
-        dap = { justMyCode = false },
+        dap = { justMyCode = true } ,
         -- Command line arguments for runner
         -- Can also be a function to return dynamic values
         args = {"--log-level", "DEBUG"},

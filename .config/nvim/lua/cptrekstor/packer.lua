@@ -30,9 +30,15 @@ return require('packer').startup(function(use)
     use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
     use("nvim-treesitter/nvim-treesitter-context");
     use("nvim-treesitter/playground")
-    use"ThePrimeagen/Harpoon"
     use"mbbill/undotree"
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
     use"tpope/vim-fugitive"
+    use"nvim-tree/nvim-tree.lua"
+    use"nvim-tree/nvim-web-devicons"
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',

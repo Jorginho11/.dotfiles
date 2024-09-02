@@ -37,3 +37,4 @@ require('mason-tool-installer').setup {
   },
   auto_update=false,
 }
+
