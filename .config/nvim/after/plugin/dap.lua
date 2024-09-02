@@ -1,11 +1,30 @@
 -- Load the required plugins
 local dap = require('dap')
 local dapui = require('dapui')
+local dap_vscode = require('dap.ext.vscode')
 
--- nvim-dap configuration
+
+-- Keybindings
+vim.api.nvim_set_keymap('n', '<Leader>ol', '<Cmd>lua require("cptrekstor.launch").open_launch_json()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>ll', '<Cmd>lua require("cptrekstor.launch").load_launch_json()<CR>', { noremap = true, silent = true })
+
+
+-- Call the function to load the launch.json file
+-- load_launch_json()
+
+local function get_python_path()
+  -- Check for pyenv's python3 and use the active virtualenv if available
+  local pyenv_python = vim.fn.system('pyenv which python3'):gsub('%s+', '')
+  if vim.fn.executable(pyenv_python) == 1 then
+    return pyenv_python
+  else
+    return 'python3'  -- Fallback to system Python 3
+  end
+end
+
 dap.adapters.python = {
   type = 'executable',
-  command = 'python',
+  command = get_python_path(),
   args = { '-m', 'debugpy.adapter' },
 }
 
@@ -40,6 +59,7 @@ vim.api.nvim_set_keymap('n', '<Leader>B', ':lua require("dap").set_breakpoint(vi
 vim.api.nvim_set_keymap('n', '<Leader>lp', ':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dr', ':lua require("dap").repl.open()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dl', ':lua require("dap").run_last()<CR>', { noremap = true, silent = true })
-
 vim.api.nvim_set_keymap('n', '<Leader>dui', ':lua require("dapui").toggle()<CR>', { noremap = true, silent = true })
 
+--debugging
+vim.api.nvim_set_keymap('n', '<Leader>dv', ':lua require("dapui").eval()<CR>', { noremap = true, silent = true })
