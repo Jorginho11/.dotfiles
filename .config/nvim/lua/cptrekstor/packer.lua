@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
     }
     use"tpope/vim-fugitive"
     use"nvim-tree/nvim-tree.lua"
+    use"Myzel394/jsonfly.nvim"
+    use 'tpope/vim-dotenv'
     use"nvim-tree/nvim-web-devicons"
     use {
         'VonHeikemen/lsp-zero.nvim',
