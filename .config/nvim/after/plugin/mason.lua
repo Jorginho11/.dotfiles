@@ -38,3 +38,6 @@ require('mason-tool-installer').setup {
   auto_update=false,
 }
 
+ require ('mason-nvim-dap').setup({
+    handlers = {}, -- sets up dap in the predefined manner
+})
